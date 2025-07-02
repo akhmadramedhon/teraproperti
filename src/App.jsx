@@ -28,9 +28,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       // Rute Publik (atau untuk semua role yang sudah login)
-      { path: '/', element: <PageUser /> },
+      { path: '/teraproperti/', element: <PageUser /> },
       {
-        path: '/isi-data',
+        path: '/teraproperti/isi-data',
         element: (
           <RequireAuth>
             <IsiDataUser />
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 
       // Rute yang HANYA untuk role 'user'
       {
-        path: '/dashboard-user',
+        path: '/teraproperti/dashboard-user',
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 
       // Rute yang HANYA untuk role 'user' dan 'consultant'
       {
-        path: '/chats',
+        path: '/teraproperti/chats',
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/chats/start/:id',
+        path: '/teraproperti/chats/start/:id',
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/form-jual',
+        path: '/teraproperti/form-jual',
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
 
       // Rute yang HANYA untuk role 'admin'
       {
-        path: "/admin/dashboard",
+        path: "/teraproperti/admin/dashboard",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/rumah",
+        path: "/teraproperti/admin/rumah",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -120,7 +120,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/konsultan",
+        path: "/teraproperti/admin/konsultan",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -132,7 +132,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/pengguna",
+        path: "/teraproperti/admin/pengguna",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -144,7 +144,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/pengajuan/:id",
+        path: "/teraproperti/admin/pengajuan/:id",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -158,7 +158,7 @@ const router = createBrowserRouter([
       
       // Rute yang untuk SEMUA role yang sudah login
       {
-        path: "/detail-properti/:id", // Semua role boleh lihat detail
+        path: "/teraproperti/detail-properti/:id", // Semua role boleh lihat detail
         element: (
           <RequireAuth>
             <RequireCompleteProfile>
@@ -168,7 +168,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/profile", // Semua role pasti punya profil
+        path: "/teraproperti/profile", // Semua role pasti punya profil
         element: (
           <RequireAuth>
             <RequireCompleteProfile>

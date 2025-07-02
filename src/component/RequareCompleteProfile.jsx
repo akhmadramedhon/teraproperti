@@ -21,10 +21,10 @@ export default function RequireCompleteProfile({ children }) {
     userData?.name && userData?.nik && userData?.ktp_image_url;
 
   const currentPath = window.location.pathname;
-  const isOnIsiDataPage = currentPath === "/isi-data";
+  const isOnIsiDataPage = currentPath === "/teraproperti/isi-data";
 
   if ((!isProfileComplete || !userData.role) && !isOnIsiDataPage) {
-    return <Navigate to="/isi-data" replace />;
+    return <Navigate to="/teraproperti/isi-data" replace />;
   }
 
   return children;

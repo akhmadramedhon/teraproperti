@@ -133,7 +133,7 @@ export default function PageFormJual() {
           onSuccess: () => {
             localStorage.removeItem("unpaid_house_id");
             alert("Pembayaran berhasil!");
-            navigate("/");
+            navigate("/teraproperti/");
           },
           onClose: () => {
             alert("Silakan selesaikan pembayaran untuk melanjutkan.");
@@ -164,7 +164,7 @@ export default function PageFormJual() {
             onSuccess: () => {
               localStorage.removeItem("unpaid_house_id");
               alert("Pembayaran berhasil!");
-              navigate("/");
+              navigate("/teraproperti/");
             },
             onClose: () => {
               alert("Silakan selesaikan pembayaran untuk melanjutkan.");

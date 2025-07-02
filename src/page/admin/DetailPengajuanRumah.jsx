@@ -35,13 +35,13 @@ export default function DetailPengajuanRumah() {
   const handleApprove = async () => {
     await approve({ houseId: id });
     alert("Pengajuan disetujui");
-    navigate("/admin/rumah");
+    navigate("/teraproperti/admin/rumah");
   };
 
   const handleReject = async () => {
     await reject({ houseId: id });
     alert("Pengajuan ditolak");
-    navigate("/admin/rumah");
+    navigate("/teraproperti/admin/rumah");
   };
 
   const dataList = [

@@ -43,7 +43,7 @@ export default function ChatsListPage() {
               <div
                 key={partner._id}
                 className="flex items-center gap-4 py-4 cursor-pointer hover:bg-gray-50 rounded-lg px-2 transition"
-                onClick={() => navigate(`/chats/start/${partner._id}`)}
+                onClick={() => navigate(`/teraproperti/chats/start/${partner._id}`)}
               >
                 <Avatar
                   isBordered

@@ -59,7 +59,7 @@ export default function IsiDataUser() {
     });
 
       alert("Data berhasil disimpan!");
-      navigate("/");
+      navigate("/teraproperti/");
     } catch (error) {
       console.error(error);
       alert("Gagal menyimpan data. Silakan coba lagi.");
