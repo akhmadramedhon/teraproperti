@@ -59,7 +59,7 @@ export default function PropertyCard({ house }) {
 
         <div className="flex justify-between pt-2">
           <Link
-            to={`/detail-properti/${house._id}`}
+            to={`/teraproperti/detail-properti/${house._id}`}
             className="text-sm text-blue-600 underline"
           >
             Detail Property
