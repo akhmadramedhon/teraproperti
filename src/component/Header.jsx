@@ -25,23 +25,23 @@ export default function HeaderNav() {
 
   const navItems = {
     user: [
-      { to: "/", label: "Home" },
-      { to: "/chats", label: "Chat" },
-      { to: "/form-jual", label: "Jual" },
-      { to: "/profile", label: "Profile" },
+      { to: "/teraproperti/", label: "Home" },
+      { to: "/teraproperti/chats", label: "Chat" },
+      { to: "/teraproperti/form-jual", label: "Jual" },
+      { to: "/teraproperti/profile", label: "Profile" },
     ],
     admin: [
-      { to: "/admin/dashboard", label: "Dashboard" },
-      { to: "/admin/rumah", label: "Pengajuan Rumah" },
-      { to: "/admin/konsultan", label: "Pengajuan Konsultan" },
-      { to: "/admin/pengguna", label: "Pengguna" },
-      { to: "/profile", label: "Profile" },
+      { to: "/teraproperti/admin/dashboard", label: "Dashboard" },
+      { to: "/teraproperti/admin/rumah", label: "Pengajuan Rumah" },
+      { to: "/teraproperti/admin/konsultan", label: "Pengajuan Konsultan" },
+      { to: "/teraproperti/admin/pengguna", label: "Pengguna" },
+      { to: "/teraproperti/profile", label: "Profile" },
     ],
     consultant: [
-      { to: "/", label: "Home" },
-      { to: "/chats", label: "Chat" },
-      { to: "/orderan", label: "Orderan" },
-      { to: "/profile", label: "Profile" },
+      { to: "/teraproperti/", label: "Home" },
+      { to: "/teraproperti/chats", label: "Chat" },
+      { to: "/teraproperti/orderan", label: "Orderan" },
+      { to: "/teraproperti/profile", label: "Profile" },
     ],
   };
 
@@ -84,7 +84,7 @@ export default function HeaderNav() {
           ))}
 
           {!isLoaded ? null : user ? (
-            <UserButton afterSignOutUrl="/" />
+            <UserButton afterSignOutUrl="/teraproperti/" />
           ) : (
             <button
               onClick={() => openSignIn()}
@@ -118,7 +118,7 @@ export default function HeaderNav() {
           ))}
 
           {!isLoaded ? null : user ? (
-            <UserButton afterSignOutUrl="/" />
+            <UserButton afterSignOutUrl="/teraproperti/" />
           ) : (
             <button
               onClick={() => openSignIn()}
