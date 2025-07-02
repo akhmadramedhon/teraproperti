@@ -18,19 +18,22 @@ import Loading from "../../component/Loading";
 export default function DetailPengajuanRumah() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const rumah = useQuery(api.houses.getDetailById, { houseId: id });
+  const rumah = useQuery(id ? api.houses.getDetailById : null, id ? { houseId: id } : null);
 
   const approve = useMutation(api.houses.approvePengajuan);
   const reject = useMutation(api.houses.tolakPengajuan);
 
-  const sertifikatUrl = useQuery(api.storage.getUrl, {
-    storageId: rumah?.certificate_pdf_url,
-  });
-  const fotoRumahUrl = useQuery(api.storage.getUrl, {
-    storageId: rumah?.house_image_url,
-  });
-
+  const sertifikatUrl = useQuery(
+    rumah?.certificate_pdf_url ? api.storage.getUrl : null,
+    rumah?.certificate_pdf_url ? { storageId: rumah.certificate_pdf_url } : null
+  );
+  const fotoRumahUrl = useQuery(
+    rumah?.house_image_url ? api.storage.getUrl : null,
+    rumah?.house_image_url ? { storageId: rumah.house_image_url } : null
+  );
+  
   if (!rumah) return <Loading />;
+  if (!sertifikatUrl || !fotoRumahUrl) return <Loading />;
 
   const handleApprove = async () => {
     await approve({ houseId: id });
