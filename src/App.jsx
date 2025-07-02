@@ -144,7 +144,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/teraproperti/admin/pengajuan/:id",
+        path: "/teraproperti/pengajuan/:id",
         element: (
           <RequireAuth>
             <RequireCompleteProfile>

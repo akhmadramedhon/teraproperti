@@ -72,7 +72,7 @@ export default function PagePengajuanRumah() {
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2 flex-wrap justify-center">
-                      <Link to={`/teraproperti/admin/pengajuan/${rumah._id}`}>
+                      <Link to={`/teraproperti/pengajuan/${rumah._id}`}>
                         <Button variant="outline" size="sm">
                           Detail
                         </Button>
