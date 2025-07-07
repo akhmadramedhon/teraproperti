@@ -3,9 +3,14 @@ import Footer from "../../component/Footer";
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import Loading from "../../component/Loading";
+import { useSearch } from "../../component/SearchContext";
 
 export default function PageUser() {
-  const houses = useQuery(api.houses.getApprovedHouses);
+  const { searchTerm } = useSearch();
+  const houses = useQuery(
+    searchTerm ? api.houses.searchHouses : api.houses.getApprovedHouses,
+    searchTerm ? { search: searchTerm } : undefined
+  );
 
   if (!houses) return <Loading />;
   if (houses.length === 0) return <p className="text-center">Belum ada rumah tersedia.</p>;
