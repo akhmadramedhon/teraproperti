@@ -10,11 +10,13 @@ import { Search, Menu } from "lucide-react";
 import { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import { useSearch } from "./SearchContext";
 
 export default function HeaderNav() {
   const { openSignIn } = useClerk();
   const { user, isLoaded } = useUser();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { searchTerm, setSearchTerm } = useSearch();
 
   const userData = useQuery(
     api.users.getUser,
@@ -78,6 +80,8 @@ export default function HeaderNav() {
               key={item.to}
               to={item.to}
               className="text-sm text-black hover:text-indigo-600"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             >
               {item.label}
             </Link>
@@ -105,6 +109,8 @@ export default function HeaderNav() {
               type="text"
               placeholder="Cari rumah"
               className="w-full bg-transparent outline-none text-sm text-gray-700"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
           {activeNav.map((item) => (

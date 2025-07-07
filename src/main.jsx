@@ -7,6 +7,7 @@ import { ConvexProvider, ConvexReactClient } from "convex/react";
 import { HeroUIProvider } from "@heroui/react";
 // import { BrowserRouter } from "react-router-dom";
 import { ClerkProvider } from "@clerk/clerk-react";
+import { SearchProvider } from "./component/SearchContext.jsx";
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL);
 
@@ -16,7 +17,9 @@ createRoot(document.getElementById("root")).render(
       <HeroUIProvider>
         {/* <BrowserRouter> */}
           <ConvexProvider client={convex}>
-            <App />
+            <SearchProvider>
+              <App />
+            </SearchProvider>
           </ConvexProvider>
         {/* </BrowserRouter> */}
       </HeroUIProvider>
