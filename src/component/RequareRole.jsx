@@ -47,5 +47,5 @@ export default function RequireRole({ children, allowedRoles }) {
   // alihkan (redirect) mereka ke halaman utama.
   // 'replace' digunakan agar pengguna tidak bisa menekan tombol "back" di browser
   // untuk kembali ke halaman admin yang tidak bisa mereka akses.
-  return <Navigate to="/" replace />;
+  return <Navigate to="/teraproperti/" replace />;
 }
