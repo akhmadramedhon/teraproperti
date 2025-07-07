@@ -1,5 +1,5 @@
 // PropertyCard.jsx
-import { Ruler, Calendar, ListOrdered, Landmark } from "lucide-react";
+import {ArrowRight, Ruler, Calendar, ListOrdered, Landmark } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
@@ -16,7 +16,7 @@ export default function PropertyCard({ house }) {
   });
 
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden shadow-md border bg-white">
+    <div className="w-72 min-h-[500px] rounded-2xl overflow-hidden shadow-md border bg-white flex flex-col mb-12">
       {imageUrl && (
         <img
           src={imageUrl}
@@ -24,22 +24,22 @@ export default function PropertyCard({ house }) {
           className="w-full h-48 object-cover"
         />
       )}
-
-      <div className="p-4 space-y-3">
+    
+      <div className="p-4 space-y-3 flex-grow flex flex-col">
         <h2 className="text-base font-semibold text-gray-800">
           {house.village}, {house.district}, {house.city}
         </h2>
-
+    
         <div className="flex items-center text-sm text-gray-600 space-x-2">
           <Ruler className="h-4 w-4" />
           <span>{house.land_area} m²</span>
         </div>
-
+    
         <div className="flex items-center text-sm text-gray-600 space-x-2">
           <Landmark className="h-4 w-4" />
           <span>Rp {house.price?.toLocaleString("id-ID")}</span>
         </div>
-
+    
         <div className="text-sm text-gray-700">
           <div className="flex items-center gap-2 font-medium text-gray-800">
             <ListOrdered className="h-4 w-4" />
@@ -51,20 +51,20 @@ export default function PropertyCard({ house }) {
             ))}
           </ul>
         </div>
-
+    
         <div className="flex items-center text-sm text-gray-600 space-x-2">
           <Calendar className="h-4 w-4" />
           <span>{tanggal}</span>
         </div>
-
-        <div className="flex justify-between pt-2">
+    
+        <div className="flex justify-between pt-2 mt-auto">
           <Link
             to={`/teraproperti/detail-properti/${house._id}`}
-            className="text-sm text-blue-600 underline"
+            className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 transition"
           >
-            Detail Property
+            Detail
+            <ArrowRight className="w-4 h-4" />
           </Link>
-          
         </div>
       </div>
     </div>

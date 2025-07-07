@@ -88,11 +88,10 @@ export default function PropertyDetail() {
               </button>
               <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 w-full sm:w-1/2">
                 <Link
-            to={`/teraproperti/chats/start/${house.user_id}`}
-            className="text-sm text-green-600 underline"
-          >
-            Chat Pemilik
-          </Link>
+                  to={`/teraproperti/chats/start/${house.user_id}`}
+                >
+                  Chat Pemilik
+                </Link>
               </button>
             </div>
           </div>
