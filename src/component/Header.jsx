@@ -71,6 +71,8 @@ export default function HeaderNav() {
             type="text"
             placeholder="Cari rumah"
             className="w-full bg-transparent outline-none text-sm text-gray-700"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
@@ -80,8 +82,6 @@ export default function HeaderNav() {
               key={item.to}
               to={item.to}
               className="text-sm text-black hover:text-indigo-600"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
             >
               {item.label}
             </Link>
